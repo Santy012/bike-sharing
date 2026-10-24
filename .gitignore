@@ -11,6 +11,9 @@ _privado/
 # Datos descargados (se bajan al correr)
 data/
 
+# Predicciones de validación cruzada (pesadas; las regenera scripts/run.py)
+results/oof_*.csv
+
 # Secretos
 .env
 .env.*

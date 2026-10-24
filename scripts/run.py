@@ -2,14 +2,16 @@
 
 Uso: ``python scripts/run.py`` (unos 25 minutos en un portátil; el SVR es lo más lento).
 ``python scripts/run.py --solo-resumen`` rehace solo ``por_grupo.json`` desde las
-predicciones guardadas. Escribe en ``results/``:
+predicciones guardadas; necesita los ``oof_*.csv``, que no se versionan, así que antes
+hay que correr el script completo una vez. Escribe en ``results/``:
 
 - ``escenario_a.json``, ``escenario_b.json``, ``escenario_c.json``: una tabla de métricas por
   escenario (y, en B y C, por nivel: diario para todos, horario para ML).
 - ``estadisticos.json``: órdenes, AIC, BIC, Ljung-Box y coeficientes.
 - ``validacion_cruzada.json``: ``TimeSeriesSplit`` de 5 particiones y búsqueda de hiperparámetros.
 - ``por_grupo.json``: error por tipo de día, estación y periodo (antes y durante las fiestas).
-- ``predicciones_*.csv`` y ``oof_*.csv``: predicciones para las figuras de los notebooks.
+- ``predicciones_*.csv``: predicciones de prueba para las figuras de los notebooks.
+- ``oof_*.csv``: predicciones fuera de partición de la validación cruzada (ignorados por Git).
 """
 
 from __future__ import annotations

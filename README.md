@@ -59,9 +59,9 @@ Cada escenario tiene su propia tabla; las cifras de horizontes distintos no se m
 
 ### Lectura
 
-- **La ventaja a una hora no se traslada a horizontes más largos.** XGBoost ajustado pasa de un WAPE horario del 11,5 % a una hora al 21,8 % a un día. Buena parte de su precisión a corto plazo viene de conocer la demanda de la hora anterior.
-- **Sin clima, la dinámica de la serie no basta.** A un día, ARIMA y SARIMA no superan a la persistencia (repetir el total de ayer). Lo que aporta es el clima: SARIMAX baja el error del 22,2 % al 16,9 %.
-- **La semana de fiestas decide el orden.** Del 2 al 21 de diciembre, en el escenario B, los mejores modelos quedan casi empatados (Random Forest 8,8 %, SVR 9,1 %, XGBoost 9,5 %, SARIMAX 9,9 %). Las diferencias de la tabla vienen de los diez días entre el 22 y el 31 de diciembre, cuando la demanda cae a una fracción de la habitual y el SVR es el que mejor sigue la caída.
+- **La ventaja a una hora no se traslada a horizontes más largos.** Medido hora por hora (panel izquierdo de la figura), el WAPE de XGBoost ajustado pasa del 11,5 % a una hora al 21,8 % a un día. Buena parte de su precisión a corto plazo viene de conocer la demanda de la hora anterior. Al sumar sus predicciones horarias por día, los errores de signo opuesto se compensan, y el error del total diario en el escenario B baja al 15,0 % (tabla B).
+- **Sin clima, la dinámica de la serie no basta.** A un día, ARIMA y SARIMA no superan a la persistencia (repetir el total de ayer). Lo que aporta es el clima: SARIMAX baja el error del total diario del 22,2 % al 16,9 %.
+- **La semana de fiestas decide el orden.** Del 2 al 21 de diciembre, en el escenario B, los mejores modelos quedan casi empatados en el error del total diario (Random Forest 8,8 %, SVR 9,1 %, XGBoost 9,5 %, SARIMAX 9,9 %). Las diferencias de la tabla vienen de los diez días entre el 22 y el 31 de diciembre, cuando la demanda cae a una fracción de la habitual y el SVR es el que mejor sigue la caída.
 - **El modelo recomendado es XGBoost ajustado.** El SVR gana en la prueba de B y C, pero es el peor y el más inestable en la validación cruzada sobre año y medio de datos. Con 30 días de prueba, diez de ellos atípicos, la selección se hace por validación, donde XGBoost es el mejor tanto a una hora como a un día. Además, supera a las referencias en los tres horizontes.
 - **Estadístico o machine learning.** SARIMAX es competitivo para el total diario a pocos días, con coeficientes interpretables (cada grado de temperatura suma unos 100 alquileres al día; un día de lluvia o nieve resta unos 1.500) e intervalos de predicción. El machine learning es preferible cuando se necesita granularidad horaria o el horizonte es largo, porque reconstruye el perfil de cada día con el calendario y el clima en lugar de prolongar el nivel reciente.
 - **Por tipo de día y estación**, el error es mayor en fines de semana y festivos y en invierno, cuando la demanda es menor y depende más del tiempo y de los usuarios ocasionales.
@@ -129,6 +129,10 @@ Los notebooks leen `results/` y se pueden abrir directamente: los resultados ya 
 ## Autores
 
 Santiago Castellanos y Sara Romero.
+
+## Licencia
+
+El código se publica bajo la licencia [MIT](LICENSE). El dataset conserva su propia licencia (CC BY 4.0, ver abajo).
 
 ## Datos
 
