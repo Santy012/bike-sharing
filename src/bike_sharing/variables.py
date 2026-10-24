@@ -102,9 +102,12 @@ def exogenas_diarias(day: pd.DataFrame, conjunto: str = "completo") -> pd.DataFr
 
     - ``clima``: temperatura, humedad, viento e indicadoras de ``weathersit`` 2 (nublado) y
       3 (lluvia o nieve ligera). ``atemp_c`` se excluye por su colinealidad con ``temp_c``.
-    - ``calendario``: festivo, laboral e indicadoras de estación (base: invierno).
-      El día de la semana ya lo recoge la parte estacional de periodo 7.
-    - ``completo``: clima + festivo + laboral.
+    - ``calendario``: festivo e indicadoras de estación (base: invierno).
+    - ``completo``: clima + festivo.
+
+    ``workingday`` no entra: con la diferencia estacional de periodo 7 el efecto del fin de
+    semana se cancela y ``Δ₇ workingday = −Δ₇ holiday``, así que los dos coeficientes no se
+    pueden identificar por separado. El día de la semana ya lo recoge la parte estacional.
     """
     clima = pd.DataFrame({
         "temp_c": day["temp_c"],
@@ -113,10 +116,7 @@ def exogenas_diarias(day: pd.DataFrame, conjunto: str = "completo") -> pd.DataFr
         "weather_2": (day["weathersit"] == 2).astype(float),
         "weather_3": (day["weathersit"] >= 3).astype(float),
     })
-    calendario = pd.DataFrame({
-        "holiday": day["holiday"].astype(float),
-        "workingday": day["workingday"].astype(float),
-    })
+    calendario = pd.DataFrame({"holiday": day["holiday"].astype(float)})
     estaciones = pd.DataFrame({f"season_{s}": (day["season"] == s).astype(float) for s in (2, 3, 4)})
     if conjunto == "clima":
         return clima

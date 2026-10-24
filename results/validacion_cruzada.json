@@ -1,0 +1,130 @@
+{
+  "A": {
+    "metricas": {
+      "XGBoost ajustado": {
+        "MAE_media": 30.52440070969694,
+        "RMSE_media": 49.125519918053016,
+        "MAPE_media": 31.915848343375536,
+        "WAPE_media": 14.980109226666098,
+        "MAE_desv": 4.493725153753152,
+        "RMSE_desv": 8.239118989151494,
+        "MAPE_desv": 8.501805292621603,
+        "WAPE_desv": 2.9001373695846513
+      },
+      "XGBoost": {
+        "MAE_media": 32.955616361247664,
+        "RMSE_media": 53.12374617587534,
+        "MAPE_media": 35.688286429836204,
+        "WAPE_media": 16.175463211199805,
+        "MAE_desv": 5.152464841485099,
+        "RMSE_desv": 9.626202701320647,
+        "MAPE_desv": 12.305245310480156,
+        "WAPE_desv": 3.128446471930159
+      },
+      "Random Forest": {
+        "MAE_media": 33.95015232473359,
+        "RMSE_media": 55.649525545631164,
+        "MAPE_media": 30.67364449859108,
+        "WAPE_media": 16.588519499099526,
+        "MAE_desv": 5.4885211588770275,
+        "RMSE_desv": 7.294861379036472,
+        "MAPE_desv": 6.276831697264794,
+        "WAPE_desv": 2.7561273117310967
+      },
+      "Ridge": {
+        "MAE_media": 47.56066411964393,
+        "RMSE_media": 70.2426520994293,
+        "MAPE_media": 61.27954920704608,
+        "WAPE_media": 23.139951683962106,
+        "MAE_desv": 6.682420177836059,
+        "RMSE_desv": 10.56787397861717,
+        "MAPE_desv": 34.1766075239512,
+        "WAPE_desv": 2.666934885352842
+      },
+      "SVR": {
+        "MAE_media": 57.04017289325293,
+        "RMSE_media": 84.22871001953607,
+        "MAPE_media": 147.21404630171386,
+        "WAPE_media": 28.86500986090641,
+        "MAE_desv": 19.79377377576395,
+        "RMSE_desv": 27.131481473411203,
+        "MAPE_desv": 76.08334109067629,
+        "WAPE_desv": 12.760398464146544
+      }
+    },
+    "mejor_base": "XGBoost",
+    "hiperparametros": {
+      "subsample": 0.7,
+      "n_estimators": 800,
+      "min_child_weight": 5,
+      "max_depth": 6,
+      "learning_rate": 0.02,
+      "colsample_bytree": 0.8
+    },
+    "MAE_busqueda": 30.526610946655275
+  },
+  "B": {
+    "metricas": {
+      "XGBoost ajustado": {
+        "MAE_media": 41.935413911160865,
+        "RMSE_media": 66.01228403652374,
+        "MAPE_media": 47.19141583193725,
+        "WAPE_media": 20.730686786420023,
+        "MAE_desv": 4.399923851431544,
+        "RMSE_desv": 9.51287927155882,
+        "MAPE_desv": 11.74417712372192,
+        "WAPE_desv": 4.4186117025491995
+      },
+      "XGBoost": {
+        "MAE_media": 43.12516968556457,
+        "RMSE_media": 68.24709000610724,
+        "MAPE_media": 44.80409433319941,
+        "WAPE_media": 21.437819329456662,
+        "MAE_desv": 4.200112427347119,
+        "RMSE_desv": 9.42293300770385,
+        "MAPE_desv": 9.644973726108839,
+        "WAPE_desv": 5.135386759706444
+      },
+      "Random Forest": {
+        "MAE_media": 46.29984287781843,
+        "RMSE_media": 73.51517700305304,
+        "MAPE_media": 50.75274961469344,
+        "WAPE_media": 22.680198591907875,
+        "MAE_desv": 4.856936246389116,
+        "RMSE_desv": 7.269969746659681,
+        "MAPE_desv": 11.215833431906843,
+        "WAPE_desv": 3.3208477823155627
+      },
+      "Ridge": {
+        "MAE_media": 59.860732121732084,
+        "RMSE_media": 87.19615793240683,
+        "MAPE_media": 115.95940315729115,
+        "WAPE_media": 29.450533862609706,
+        "MAE_desv": 12.249575249182138,
+        "RMSE_desv": 12.301689482583008,
+        "MAPE_desv": 74.79801125596019,
+        "WAPE_desv": 7.550588087357261
+      },
+      "SVR": {
+        "MAE_media": 63.406832655861464,
+        "RMSE_media": 93.01347124889891,
+        "MAPE_media": 147.4211195203109,
+        "WAPE_media": 31.98811069802494,
+        "MAE_desv": 17.507173263100732,
+        "RMSE_desv": 23.730825566488004,
+        "MAPE_desv": 77.16001978627587,
+        "WAPE_desv": 12.233273331966505
+      }
+    },
+    "mejor_base": "XGBoost",
+    "hiperparametros": {
+      "subsample": 0.7,
+      "n_estimators": 800,
+      "min_child_weight": 5,
+      "max_depth": 6,
+      "learning_rate": 0.02,
+      "colsample_bytree": 0.8
+    },
+    "MAE_busqueda": 41.93906860351562
+  }
+}

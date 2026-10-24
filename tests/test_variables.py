@@ -72,7 +72,7 @@ def test_fila_desde_historia_reproduce_variables_a(horaria):
             assert fila[col] == pytest.approx(x.iloc[t][col])
 
 
-@pytest.mark.parametrize("conjunto, n", [("completo", 7), ("clima", 5), ("calendario", 5)])
+@pytest.mark.parametrize("conjunto, n", [("completo", 6), ("clima", 5), ("calendario", 4)])
 def test_exogenas_diarias(conjunto, n):
     x = variables.exogenas_diarias(datos.serie_diaria(), conjunto)
     assert x.shape == (731, n) and not x.isna().any().any()
