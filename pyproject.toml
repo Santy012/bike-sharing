@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bike-sharing"
+version = "0.1.0"
+description = "Pronóstico de la demanda de bicicletas compartidas con modelos estadísticos y de machine learning, comparados por horizonte."
+requires-python = ">=3.12"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
