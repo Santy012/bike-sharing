@@ -8,6 +8,8 @@ La pregunta central es cuál conviene usar, y la respuesta depende de **con cuá
 
 ## Tres escenarios
 
+![Escenarios A, B y C sobre los mismos 30 días de prueba, evaluados contra referencias ingenuas](docs/img/pipeline.png)
+
 | Escenario | Pregunta | Información disponible | Modelos |
 | --- | --- | --- | --- |
 | **A. Hora siguiente** | ¿Cuántos alquileres en la hora h? | Demanda real hasta h − 1 | ML horario con rezagos de 1, 24 y 168 h |

@@ -1,0 +1,13 @@
+digraph G { rankdir=LR; bgcolor="white"; pad=0.3; nodesep=0.35; ranksep=0.5;
+  node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=12, color="#5b6b7f", fillcolor="#eef2f7", margin="0.18,0.08"];
+  edge [fontname="DejaVu Sans", fontsize=10, color="#5b6b7f", fontcolor="#3a4656"];
+  U [label="UCI Bike Sharing\n731 días · 17.379 horas", shape=cylinder];
+  R [label="Rejilla horaria completa\nimputación · sin fuga"];
+  subgraph cluster_e { label="Mismos 30 días de prueba (dic. 2012)"; fontname="DejaVu Sans Bold"; fontsize=12; style="rounded,dashed"; color="#9aa7b6";
+    A [label="A. Hora siguiente\nML con rezagos 1, 24, 168 h"];
+    B [label="B. Día siguiente\nestadísticos día a día · ML 24 h sumadas"];
+    C [label="C. Mes completo\nestadísticos a 30 pasos · ML recursivo"]; }
+  N [label="Referencias ingenuas\npersistencia · estacional", fillcolor="#fde9cf", color="#c98a2b"];
+  M [label="WAPE · MAE · RMSE · MAPE\npor escenario", fillcolor="#e3f1e6", color="#4e8a5c"];
+  U -> R; R -> A; R -> B; R -> C; A -> M; B -> M; C -> M; N -> M [style=dashed, label="comparar"];
+}
